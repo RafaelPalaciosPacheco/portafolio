@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Import Product Sans font */
+        @import url('https://fonts.cdnfonts.com/css/product-sans');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Product Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Hero Section Updated */
+        .hero {
+            background: #1D3771; /* Fondo azul oscuro */
+            padding: 100px 0;
+            text-align: left; /* Alineación a la izquierda */
+        }
+
+        .hero-title {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #FFFFFF; /* Letras blancas */
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #FFFFFF; /* Letras blancas */
+            max-width: 600px;
+            margin: 0 0 2rem 0; /* Ajuste de margen */
+            line-height: 1.7;
+        }
+        
+        .wavy-line {
+            margin-bottom: 2rem;
+            display: block; /* Asegura que esté en su propia línea */
+        }
+        
+        /* Header Section */
+        .header {
+            text-align: center;
+            padding: 80px 0 40px;
+            background: white;
+        }
+
+        .header-subtitle {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .header-title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #1D3771;
+            margin-bottom: 2rem;
+        }
+
+        .header-decoration {
+            width: 80px;
+            height: 4px;
+            background: #FFD700;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .header-decoration::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #FFD700;
+            top: -8px;
+            transform: scaleX(0.7);
+        }
+
+        .header-decoration::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: #FFD700;
+            bottom: -8px;
+            transform: scaleX(0.4);
+        }
+
+        /* Project Section */
+        .project-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .project-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center; 
+            margin-bottom: 120px;
+        }
+
+        .project-layout.reverse {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .project-layout.reverse .project-content {
+            order: 2;
+        }
+
+        .project-layout.reverse .project-image {
+            order: 1;
+        }
+
+        .project-content {
+            padding: 20px 0;
+        }
+
+        .project-category {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: #1D3771;
+            margin-bottom: 2rem;
+            line-height: 1.2;
+        }
+
+        .project-description {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .project-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background: #1D3771;
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #0F2142;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(29, 55, 113, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #1D3771;
+            padding: 12px 28px;
+            border: 2px solid #1D3771;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: #1D3771;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(29, 55, 113, 0.3);
+        }
+
+        .project-image {
+            background: #FFF9C4;
+            border-radius: 15px;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-mockup {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #1D3771;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        /* Alternating background colors */
+        .project-section:nth-of-type(even) {
+            background: #f8f9fa;
+        }
+
+        .project-section:nth-of-type(even) .project-image {
+            background: #E8F4FD;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+
+            .header-title {
+                font-size: 2.5rem;
+            }
+
+            .project-layout,
+            .project-layout.reverse {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .project-layout .project-content, .project-layout.reverse .project-content {
+                text-align: left;
+            }
+
+            .project-layout.reverse .project-content,
+            .project-layout.reverse .project-image {
+                order: unset;
+            }
+
+        .project-title {
+                font-size: 2.2rem;
+            }
+
+            .project-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .project-image {
+                min-height: 300px;
+                padding: 20px;
+            }
+        }
+
+        /* Animation */
+        .project-section {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        /* Using nth-of-type for more robust selection */
+        .project-section:nth-of-type(1) { animation-delay: 0.1s; }
+        .project-section:nth-of-type(2) { animation-delay: 0.3s; }
+        .project-section:nth-of-type(3) { animation-delay: 0.5s; }
+        .project-section:nth-of-type(4) { animation-delay: 0.7s; }
+        .project-section:nth-of-type(5) { animation-delay: 0.9s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">Conoce mis proyectos</h1>
+            <svg class="wavy-line" width="100" height="12" viewBox="0 0 100 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2 6C14.5 14.5 32.5 2.5 50 6C67.5 9.5 85.5 -2.5 98 6" stroke="#FFD700" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+            <p class="hero-subtitle">
+                Una colección de mis trabajos más recientes en diseño y desarrollo. Explora cada uno para ver el proceso y los resultados.
+            </p>
+        </div>
+    </section>
+
+    <!-- Header for Figma Templates -->
+    <section class="header">
+        <div class="container">
+            <p class="header-subtitle">Diseño de Interfaces</p>
+            <h1 class="header-title">Templates de Figma</h1>
+            <div class="header-decoration"></div>
+        </div>
+    </section>
+
+    <!-- Proyecto 1 -->
+    <section class="project-section">
+        <div class="container">
+            <div class="project-layout">
+                <div class="project-content">
+                    <p class="project-category">Figma Template</p>
+                    <h2 class="project-title">Design Handoff</h2>
+                    <p class="project-description">
+                        Este template está diseñado para optimizar el proceso de transferencia de diseño entre diseñadores y desarrolladores. Facilita una transición fluida del diseño a la implementación.
+                    </p>
+                    <div class="project-buttons">
+                        <a href="https://www.figma.com/community/file/1492028117654664817/design-handoff-template" target="_blank" class="btn-primary">Ver Template</a>
+                        <a href="#" class="btn-secondary">Detalles</a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <div class="project-mockup" style="background: none; padding: 0; box-shadow: none; border-radius: 15px; overflow: hidden;">
+                        <img src="https://i.imgur.com/3QV5F48.png" alt="Design Handoff Template" style="width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyecto 2 -->
+    <section class="project-section">
+        <div class="container">
+            <div class="project-layout reverse">
+                <div class="project-content">
+                    <p class="project-category">Figma Template</p>
+                    <h2 class="project-title">SaaS Landing Page Template</h2>
+                    <p class="project-description">
+                        Este UI kit está diseñado para ayudarte a crear rápidamente páginas de aterrizaje modernas y flexibles. Sigue los pasos para sacar el máximo provecho y adaptar el diseño a tus necesidades.
+                    </p>
+                    <div class="project-buttons">
+                        <a href="https://www.figma.com/community/file/1483547431959524850/saas-landing-page-template" target="_blank" class="btn-primary">Ver Template</a>
+                        <a href="#" class="btn-secondary">Detalles</a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <div class="project-mockup" style="background: none; padding: 0; box-shadow: none; border-radius: 15px; overflow: hidden;">
+                        <img src="https://i.imgur.com/MXFwJvx.png" alt="SaaS Landing Page Template" style="width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyecto 3 -->
+    <section class="project-section">
+        <div class="container">
+            <div class="project-layout">
+                <div class="project-content">
+                    <p class="project-category">Figma Template</p>
+                    <h2 class="project-title">HubSpot chatbot for Figma</h2>
+                    <p class="project-description">
+                        Usa este template de Figma para recrear la experiencia de tus usuarios cuando interactúan con tu equipo de ventas o soporte al cliente a través del widget de chat en vivo de HubSpot.
+                    </p>
+                    <div class="project-buttons">
+                        <a href="https://www.figma.com/community/file/1446690621232053533/hubspot-chatbot-for-figma-updated" target="_blank" class="btn-primary">Ver Template</a>
+                        <a href="#" class="btn-secondary">Detalles</a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <div class="project-mockup" style="background: none; padding: 0; box-shadow: none; border-radius: 15px; overflow: hidden;">
+                        <img src="https://i.imgur.com/7rr2mdi.png" alt="HubSpot chatbot for Figma" style="width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Header for Other Projects -->
+    <section class="header">
+        <div class="container">
+            <p class="header-subtitle">Desarrollo y Diseño Web</p>
+            <h1 class="header-title">Otros proyectos</h1>
+            <div class="header-decoration"></div>
+        </div>
+    </section>
+
+    <!-- Proyecto 4 -->
+    <section class="project-section">
+        <div class="container">
+            <div class="project-layout reverse">
+                <div class="project-content">
+                    <p class="project-category">Inteligencia Artificial</p>
+                    <h2 class="project-title">Calculadora de Visa</h2>
+                    <p class="project-description">
+                        Utilicé una herramienta de IA a la cual la entrené con consejos de expertos acerca de la entrevista de visa para poder darle a los aspirantes consejos personalizados de acuerdo a su perfil.
+                    </p>
+                    <div class="project-buttons">
+                        <a href="https://rafaelpalaciospacheco.github.io/mivisa.github.io/" target="_blank" class="btn-primary">Ver página</a>
+                        <a href="#" class="btn-secondary">Ver Código</a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <div class="project-mockup" style="background: none; padding: 0; box-shadow: none; border-radius: 15px; overflow: hidden;">
+                        <img src="https://i.imgur.com/MigDtvL.png" alt="Calculadora de Visa" style="width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyecto 5 -->
+    <section class="project-section">
+        <div class="container">
+            <div class="project-layout">
+                <div class="project-content">
+                    <p class="project-category">App Móvil</p>
+                    <h2 class="project-title">Partybooster</h2>
+                    <p class="project-description">
+                        Es un juego de cartas convertido en una aplicación móvil, acomodando los componentes necesarios con Photoshop e Ilustrator. También construí el MVP de la app con una herramienta low code.
+                    </p>
+                    <div class="project-buttons">
+                        <a href="https://www.figma.com/design/so6ZYyeO57197eZEftRj7w/Partybooster?node-id=0-1&t=jwRS9TzJVLOCJRHK-1" target="_blank" class="btn-primary">Ver en Figma</a>
+                        <a href="https://app.flutterflow.io/project/partybooster-39ocle" target="_blank" class="btn-secondary">Ver en FlutterFlow</a>
+                    </div>
+                </div>
+                <div class="project-image">
+                    <div class="project-mockup" style="background: none; padding: 0; box-shadow: none; border-radius: 15px; overflow: hidden;">
+                        <img src="https://i.imgur.com/9cRv6Aw.png" alt="Partybooster App" style="width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll para los botones
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                // Aquí puedes agregar la lógica para navegación si es necesario
+            });
+        });
+
+        // Intersection Observer para animaciones
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observar todas las secciones de proyectos
+        document.querySelectorAll('.project-section').forEach(section => {
+            section.style.animationPlayState = 'paused';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
