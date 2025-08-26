@@ -20,7 +20,7 @@
         body {
             font-family: 'Product Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            background: #f8f9fa;
+            background: #FDF8F0; /* Tono beige claro del nuevo template */
             color: #333;
         }
 
@@ -30,34 +30,196 @@
             padding: 0 40px;
         }
 
-        /* Hero Section Updated */
-        .hero {
-            background: #1D3771; /* Fondo azul oscuro */
-            padding: 100px 0;
-            text-align: left; /* Alineación a la izquierda */
+        /* New Hero Section */
+        .new-hero {
+            background: #FDF8F0;
+            padding: 80px 0;
+            display: flex;
+            align-items: center;
+            min-height: 90vh;
         }
 
-        .hero-title {
-            font-size: 4rem;
+        .new-hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .new-hero-text h1 {
+            font-size: 3.8rem;
             font-weight: bold;
-            color: #FFFFFF; /* Letras blancas */
-            margin-bottom: 1rem;
+            color: #1D3771;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+        
+        .new-hero-text h1 span {
+            display: block;
         }
 
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: #FFFFFF; /* Letras blancas */
-            max-width: 600px;
-            margin: 0 0 2rem 0; /* Ajuste de margen */
+        .new-hero-text p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 450px;
+            margin-bottom: 2.5rem;
+        }
+        
+        .new-hero-buttons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .btn-start {
+            background: #1D3771;
+            color: white;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-play {
+            background: #FFD700;
+            color: #1D3771;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-start:hover, .btn-play:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .new-hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .new-hero-image {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-scribble {
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            opacity: 0.8;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            padding: 100px 0;
+            background: #FDF8F0;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 80px;
+        }
+
+        .experience-intro h2 {
+            font-size: 2.8rem;
+            color: #1D3771;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-intro p {
+            color: #555;
+            margin-bottom: 2rem;
             line-height: 1.7;
         }
         
-        .wavy-line {
-            margin-bottom: 2rem;
-            display: block; /* Asegura que esté en su propia línea */
+        .btn-cv {
+            background: #FFD700;
+            color: #1D3771;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .btn-cv:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .timeline {
+            position: relative;
         }
         
-        /* Header Section */
+        .timeline-item {
+            padding-left: 40px;
+            position: relative;
+            padding-bottom: 50px;
+            border-left: 2px solid #FFD700;
+        }
+        
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -11px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #FFD700;
+            border: 4px solid #FDF8F0;
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: #1D3771;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        
+        .timeline-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #1D3771;
+        }
+        
+        .timeline-subtitle {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-description {
+            color: #666;
+            line-height: 1.7;
+        }
+
+
+        /* Header Section (used for project titles) */
         .header {
             text-align: center;
             padding: 80px 0 40px;
@@ -111,6 +273,10 @@
         .project-section {
             padding: 80px 0;
             background: white;
+        }
+        
+        .project-section.first {
+            padding-top: 0;
         }
 
         .project-layout {
@@ -248,15 +414,35 @@
         }
 
         /* Responsive */
+        @media (max-width: 992px) {
+            .new-hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .new-hero-image-wrapper {
+                order: -1; /* Mueve la imagen arriba en móvil */
+                margin-bottom: 40px;
+            }
+            .new-hero-text h1 {
+                font-size: 3rem;
+            }
+             .new-hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .new-hero-buttons {
+                justify-content: center;
+            }
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 0 20px;
             }
             
-            .hero-title {
-                font-size: 2.8rem;
-            }
-
             .header-title {
                 font-size: 2.5rem;
             }
@@ -277,7 +463,7 @@
                 order: unset;
             }
 
-        .project-title {
+            .project-title {
                 font-size: 2.2rem;
             }
 
@@ -299,7 +485,6 @@
             animation: fadeInUp 0.8s ease forwards;
         }
         
-        /* Using nth-of-type for more robust selection */
         .project-section:nth-of-type(1) { animation-delay: 0.1s; }
         .project-section:nth-of-type(2) { animation-delay: 0.3s; }
         .project-section:nth-of-type(3) { animation-delay: 0.5s; }
@@ -320,30 +505,77 @@
 </head>
 <body>
 
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- New Hero Section -->
+    <section class="new-hero">
         <div class="container">
-            <h1 class="hero-title">Conoce mis proyectos</h1>
-            <svg class="wavy-line" width="100" height="12" viewBox="0 0 100 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M2 6C14.5 14.5 32.5 2.5 50 6C67.5 9.5 85.5 -2.5 98 6" stroke="#FFD700" stroke-width="4" stroke-linecap="round"/>
-            </svg>
-            <p class="hero-subtitle">
-                Una colección de mis trabajos más recientes en diseño y desarrollo. Explora cada uno para ver el proceso y los resultados.
-            </p>
+            <div class="new-hero-content">
+                <div class="new-hero-text">
+                    <h1>Hola, soy Héctor Rafael Palacios Pacheco <span>un UX/UI Designer</span></h1>
+                    <p>Un diseñador dedicado con pasión por crear experiencias digitales que no solo se ven hermosas, sino que también funcionan a la perfección.</p>
+                    <div class="new-hero-buttons">
+                        <a href="#" class="btn-start">Empezar</a>
+                        <a href="#" class="btn-play">▶</a>
+                    </div>
+                </div>
+                <div class="new-hero-image-wrapper">
+                     <svg class="hero-scribble" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M439.3,348.3c-23.8,24.8-63.4,49.5-103.8,47.2c-40.4-2.3-59.8-43.2-99.2-66.3c-39.4-23.1-90.3-24.1-125.5-50.4c-35.2-26.3-52.2-70.5-44.2-111.3s29.8-71.3,66.3-95.3s81-30.2,123.5-22.2s76.3,31.2,109.8,62.3c33.5,31.1,51,74.8,53.8,118.3C427.8,274.3,463.1,323.5,439.3,348.3z" fill="#FFD700" opacity="0.8"/>
+                    </svg>
+                    <img src="https://i.imgur.com/QbOLXSG.jpeg" alt="Héctor Rafael Palacios Pacheco" class="new-hero-image">
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Header for Figma Templates -->
-    <section class="header">
+    <!-- Experience Section -->
+    <section class="experience-section">
         <div class="container">
-            <p class="header-subtitle">Diseño de Interfaces</p>
-            <h1 class="header-title">Templates de Figma</h1>
-            <div class="header-decoration"></div>
+            <div class="experience-grid">
+                <div class="experience-intro">
+                    <h2>Mi Experiencia y Educación</h2>
+                    <p>He tenido el placer de trabajar con empresas en una variedad de industrias. Siempre estoy interesado en nuevas, emocionantes y desafiantes aventuras.</p>
+                    <a href="#" class="btn-cv">Descargar CV</a>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">Octubre 2022 - Actualidad</span>
+                        <h3 class="timeline-title">UX/UI Designer</h3>
+                        <h4 class="timeline-subtitle">Mifiel</h4>
+                        <p class="timeline-description">Diseño de nuevas funcionalidades en la plataforma: desde el análisis del problema y la definición de requerimientos hasta el diseño de interfaces en Figma, redacción de textos (copies), documentación de especificaciones para desarrollo y validación (QA) posterior a la implementación.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">Junio 2022 - Octubre 2022</span>
+                        <h3 class="timeline-title">UX/UI Designer (Practicante)</h3>
+                        <h4 class="timeline-subtitle">Peopleware</h4>
+                        <p class="timeline-description">Como practicante, me encargaba de diseñar vistas y prototipos en Figma con base en instrucciones del equipo. Realicé maquetación de pantallas, creación de prototipos interactivos y videos explicativos.</p>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">2020 - Presente</span>
+                        <h3 class="timeline-title">Estudios en línea</h3>
+                        <h4 class="timeline-subtitle">Platzi</h4>
+                        <p class="timeline-description">Cursos en UX/UI, desarrollo web, tecnología y producto digital (más de 20 cursos completados y en progreso).</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <span class="timeline-date">2012 - 2016</span>
+                        <h3 class="timeline-title">Licenciatura en Psicología</h3>
+                        <h4 class="timeline-subtitle">Universidad de Guanajuato</h4>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Proyecto 1 -->
     <section class="project-section">
+        <div class="container" style="text-align: center; padding-bottom: 60px;">
+            <p class="header-subtitle">Portafolio</p>
+            <h1 class="header-title">Mis Proyectos</h1>
+            <div class="header-decoration"></div>
+        </div>
         <div class="container">
             <div class="project-layout">
                 <div class="project-content">
@@ -411,15 +643,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Header for Other Projects -->
-    <section class="header">
-        <div class="container">
-            <p class="header-subtitle">Desarrollo y Diseño Web</p>
-            <h1 class="header-title">Otros proyectos</h1>
-            <div class="header-decoration"></div>
         </div>
     </section>
 
