@@ -65,41 +65,23 @@
             margin-bottom: 2.5rem;
         }
         
-        .new-hero-buttons {
+        .hero-socials {
             display: flex;
-            align-items: center;
             gap: 20px;
         }
         
-        .btn-start {
-            background: #1D3771;
-            color: white;
-            padding: 14px 32px;
-            border: none;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+        .hero-socials a {
+            display: inline-block;
+            transition: transform 0.3s ease;
         }
         
-        .btn-play {
-            background: #FFD700;
-            color: #1D3771;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-start:hover, .btn-play:hover {
+        .hero-socials a:hover {
             transform: translateY(-3px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .hero-socials img {
+            width: 32px;
+            height: 32px;
         }
 
         .new-hero-image-wrapper {
@@ -216,6 +198,52 @@
         .timeline-description {
             color: #666;
             line-height: 1.7;
+        }
+
+        /* Skills Section */
+        .skills-section {
+            padding: 100px 0;
+            background: #FDF8F0;
+        }
+        .skills-section h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            color: #1D3771;
+            margin-bottom: 60px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px 60px;
+        }
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .skill-name {
+            font-weight: bold;
+            color: #1D3771;
+        }
+        .skill-level {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #E0E0E0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            background-color: #1D3771;
+            border-radius: 5px;
         }
 
 
@@ -430,7 +458,7 @@
                 margin-left: auto;
                 margin-right: auto;
             }
-            .new-hero-buttons {
+            .hero-socials {
                 justify-content: center;
             }
             .experience-grid {
@@ -445,6 +473,10 @@
             
             .header-title {
                 font-size: 2.5rem;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
 
             .project-layout,
@@ -512,9 +544,10 @@
                 <div class="new-hero-text">
                     <h1>Hola, soy Héctor Rafael Palacios Pacheco <span>un UX/UI Designer</span></h1>
                     <p>Un diseñador dedicado con pasión por crear experiencias digitales que no solo se ven hermosas, sino que también funcionan a la perfección.</p>
-                    <div class="new-hero-buttons">
-                        <a href="#" class="btn-start">Empezar</a>
-                        <a href="#" class="btn-play">▶</a>
+                    <div class="hero-socials">
+                        <a href="https://www.instagram.com/kameoblinx/" target="_blank"><img src="https://cdn-icons-png.freepik.com/512/16100/16100243.png?uid=P110309758&ga=GA1.1.1446620277.1746213107" alt="Instagram"></a>
+                        <a href="https://figma.com/@hectorrafaelpal" target="_blank"><img src="https://cdn-icons-png.freepik.com/512/5968/5968704.png?uid=P110309758&ga=GA1.1.1446620277.1746213107" alt="Figma"></a>
+                        <a href="https://www.linkedin.com/in/héctor-rafael-palacios-pacheco-995036160" target="_blank"><img src="https://cdn-icons-png.freepik.com/512/5968/5968720.png?uid=P110309758&ga=GA1.1.1446620277.1746213107" alt="LinkedIn"></a>
                     </div>
                 </div>
                 <div class="new-hero-image-wrapper">
@@ -534,7 +567,7 @@
                 <div class="experience-intro">
                     <h2>Mi Experiencia y Educación</h2>
                     <p>He tenido el placer de trabajar con empresas en una variedad de industrias. Siempre estoy interesado en nuevas, emocionantes y desafiantes aventuras.</p>
-                    <a href="#" class="btn-cv">Descargar CV</a>
+                    <a href="https://drive.google.com/file/d/1ANXKZObYeLxLFIHMrhK6omhHeOT4-Xlp/view?usp=sharing" target="_blank" class="btn-cv">Descargar CV</a>
                 </div>
                 <div class="timeline">
                     <div class="timeline-item">
@@ -569,6 +602,69 @@
         </div>
     </section>
 
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <div class="container">
+            <h2>Habilidades Profesionales</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Figma</span>
+                        <span class="skill-level">Avanzado</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 95%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Webflow</span>
+                        <span class="skill-level">Intermedio</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Inglés</span>
+                        <span class="skill-level">Intermedio</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">HTML</span>
+                        <span class="skill-level">Intermedio</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 65%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Microsoft Office</span>
+                        <span class="skill-level">Intermedio</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Photoshop & Ilustrator</span>
+                        <span class="skill-level">Básico</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 40%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Proyecto 1 -->
     <section class="project-section">
         <div class="container" style="text-align: center; padding-bottom: 60px;">
@@ -586,7 +682,6 @@
                     </p>
                     <div class="project-buttons">
                         <a href="https://www.figma.com/community/file/1492028117654664817/design-handoff-template" target="_blank" class="btn-primary">Ver Template</a>
-                        <a href="#" class="btn-secondary">Detalles</a>
                     </div>
                 </div>
                 <div class="project-image">
@@ -610,7 +705,6 @@
                     </p>
                     <div class="project-buttons">
                         <a href="https://www.figma.com/community/file/1483547431959524850/saas-landing-page-template" target="_blank" class="btn-primary">Ver Template</a>
-                        <a href="#" class="btn-secondary">Detalles</a>
                     </div>
                 </div>
                 <div class="project-image">
@@ -633,8 +727,7 @@
                         Usa este template de Figma para recrear la experiencia de tus usuarios cuando interactúan con tu equipo de ventas o soporte al cliente a través del widget de chat en vivo de HubSpot.
                     </p>
                     <div class="project-buttons">
-                        <a href="https://www.figma.com/community/file/1446690621232053533/hubspot-chatbot-for-figma-updated" target="_blank" class="btn-primary">Ver Template</a>
-                        <a href="#" class="btn-secondary">Detalles</a>
+                        <a href="https://www.figma.com/community/file/14466906212320533/hubspot-chatbot-for-figma-updated" target="_blank" class="btn-primary">Ver Template</a>
                     </div>
                 </div>
                 <div class="project-image">
@@ -658,7 +751,6 @@
                     </p>
                     <div class="project-buttons">
                         <a href="https://rafaelpalaciospacheco.github.io/mivisa.github.io/" target="_blank" class="btn-primary">Ver página</a>
-                        <a href="#" class="btn-secondary">Ver Código</a>
                     </div>
                 </div>
                 <div class="project-image">
@@ -725,3 +817,4 @@
     </script>
 </body>
 </html>
+
