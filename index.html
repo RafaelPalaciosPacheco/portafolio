@@ -33,10 +33,10 @@
         /* New Hero Section */
         .new-hero {
             background: #FDF8F0;
-            padding: 80px 0;
+            padding: 40px 0;
             display: flex;
             align-items: center;
-            min-height: 90vh;
+            min-height: 70vh;
         }
 
         .new-hero-content {
@@ -245,6 +245,41 @@
             background-color: #1D3771;
             border-radius: 5px;
         }
+        
+        /* Tools Section */
+        .tools-section {
+            padding: 80px 0;
+            background: #FDF8F0;
+            text-align: center;
+        }
+
+        .tools-section h2 {
+            font-size: 2.8rem;
+            color: #1D3771;
+            margin-bottom: 60px;
+        }
+
+        .tools-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .tool-logo {
+            height: 100px;
+            max-width: auto;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+
+        .tool-logo:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
 
 
         /* Header Section (used for project titles) */
@@ -313,6 +348,10 @@
             gap: 60px;
             align-items: center; 
             margin-bottom: 120px;
+        }
+        
+        .project-layout:last-child {
+            margin-bottom: 0;
         }
 
         .project-layout.reverse {
@@ -440,6 +479,64 @@
         .project-section:nth-of-type(even) .project-image {
             background: #E8F4FD;
         }
+        
+        /* Footer Section */
+        .footer {
+            background: #1D3771;
+            color: #f0f0f0;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            color: #FFD700;
+        }
+        
+        .footer-column p, .footer-column a {
+            color: #f0f0f0;
+            text-decoration: none;
+        }
+        
+        .footer-email {
+            font-size: 1.5rem;
+            font-weight: 400; /* Changed from bold */
+            word-break: break-all;
+        }
+        
+        .footer-socials {
+            list-style: none;
+        }
+        
+        .footer-socials li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-socials a {
+            transition: color 0.3s ease;
+        }
+        
+        .footer-socials a:hover {
+            color: #FFD700;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
 
         /* Responsive */
         @media (max-width: 992px) {
@@ -665,11 +762,28 @@
         </div>
     </section>
 
-    <!-- Proyecto 1 -->
+    <!-- Tools Section -->
+    <section class="tools-section">
+        <div class="container">
+            <h2>Herramientas de día a día</h2>
+            <div class="tools-grid">
+                <img src="https://i.imgur.com/GBAoQXy.png" alt="Slack Logo" class="tool-logo">
+                <img src="https://i.imgur.com/Xp9arxr.png" alt="ClickUp Logo" class="tool-logo">
+                <img src="https://i.imgur.com/Pk1fd82.png" alt="Figma Logo" class="tool-logo">
+                <img src="https://i.imgur.com/0CThyKD.png" alt="Metabase Logo" class="tool-logo">
+                <img src="https://i.imgur.com/yj5L1yj.png" alt="Datadog Logo" class="tool-logo">
+                <img src="https://i.imgur.com/tlxsIHs.png" alt="Arcade Logo" class="tool-logo">
+                <img src="https://i.imgur.com/vC8nFMd.png" alt="Gemini Logo" class="tool-logo">
+                <img src="https://i.imgur.com/cMpnM35.png" alt="Webflow Logo" class="tool-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
     <section class="project-section">
         <div class="container" style="text-align: center; padding-bottom: 60px;">
             <p class="header-subtitle">Portafolio</p>
-            <h1 class="header-title">Mis Proyectos</h1>
+            <h1 class="header-title">Figma Templates</h1>
             <div class="header-decoration"></div>
         </div>
         <div class="container">
@@ -678,7 +792,7 @@
                     <p class="project-category">Figma Template</p>
                     <h2 class="project-title">Design Handoff</h2>
                     <p class="project-description">
-                        Este template está diseñado para optimizar el proceso de transferencia de diseño entre diseñadores y desarrolladores. Facilita una transición fluida del diseño a la implementación.
+                        Para agilizar la colaboración entre diseño y desarrollo, creé este template que clarifica especificaciones y asegura una implementación fiel al diseño original, optimizando el flujo de trabajo.
                     </p>
                     <div class="project-buttons">
                         <a href="https://www.figma.com/community/file/1492028117654664817/design-handoff-template" target="_blank" class="btn-primary">Ver Template</a>
@@ -693,7 +807,6 @@
         </div>
     </section>
 
-    <!-- Proyecto 2 -->
     <section class="project-section">
         <div class="container">
             <div class="project-layout reverse">
@@ -701,7 +814,7 @@
                     <p class="project-category">Figma Template</p>
                     <h2 class="project-title">SaaS Landing Page Template</h2>
                     <p class="project-description">
-                        Este UI kit está diseñado para ayudarte a crear rápidamente páginas de aterrizaje modernas y flexibles. Sigue los pasos para sacar el máximo provecho y adaptar el diseño a tus necesidades.
+                        Un UI kit completo y adaptable, diseñado para construir páginas de aterrizaje para productos SaaS. Su estructura flexible permite lanzar sitios atractivos y funcionales en tiempo récord.
                     </p>
                     <div class="project-buttons">
                         <a href="https://www.figma.com/community/file/1483547431959524850/saas-landing-page-template" target="_blank" class="btn-primary">Ver Template</a>
@@ -716,7 +829,6 @@
         </div>
     </section>
 
-    <!-- Proyecto 3 -->
     <section class="project-section">
         <div class="container">
             <div class="project-layout">
@@ -724,7 +836,7 @@
                     <p class="project-category">Figma Template</p>
                     <h2 class="project-title">HubSpot chatbot for Figma</h2>
                     <p class="project-description">
-                        Usa este template de Figma para recrear la experiencia de tus usuarios cuando interactúan con tu equipo de ventas o soporte al cliente a través del widget de chat en vivo de HubSpot.
+                        Este recurso de Figma permite simular y diseñar flujos de conversación para el chatbot de HubSpot, facilitando la creación de prototipos y la mejora de la experiencia del usuario.
                     </p>
                     <div class="project-buttons">
                         <a href="https://www.figma.com/community/file/14466906212320533/hubspot-chatbot-for-figma-updated" target="_blank" class="btn-primary">Ver Template</a>
@@ -739,15 +851,18 @@
         </div>
     </section>
 
-    <!-- Proyecto 4 -->
     <section class="project-section">
+        <div class="container" style="text-align: center; padding-bottom: 60px;">
+            <h1 class="header-title">Otros Proyectos</h1>
+            <div class="header-decoration"></div>
+        </div>
         <div class="container">
             <div class="project-layout reverse">
                 <div class="project-content">
                     <p class="project-category">Inteligencia Artificial</p>
                     <h2 class="project-title">Calculadora de Visa</h2>
                     <p class="project-description">
-                        Utilicé una herramienta de IA a la cual la entrené con consejos de expertos acerca de la entrevista de visa para poder darle a los aspirantes consejos personalizados de acuerdo a su perfil.
+                        Desarrollé una herramienta inteligente que, mediante IA entrenada con datos de expertos, ofrece a los solicitantes de visa una guía personalizada para prepararse y afrontar su entrevista con mayor seguridad.
                     </p>
                     <div class="project-buttons">
                         <a href="https://rafaelpalaciospacheco.github.io/mivisa.github.io/" target="_blank" class="btn-primary">Ver página</a>
@@ -762,7 +877,6 @@
         </div>
     </section>
 
-    <!-- Proyecto 5 -->
     <section class="project-section">
         <div class="container">
             <div class="project-layout">
@@ -770,7 +884,7 @@
                     <p class="project-category">App Móvil</p>
                     <h2 class="project-title">Partybooster</h2>
                     <p class="project-description">
-                        Es un juego de cartas convertido en una aplicación móvil, acomodando los componentes necesarios con Photoshop e Ilustrator. También construí el MVP de la app con una herramienta low code.
+                        Transformé un juego de cartas clásico en una app móvil interactiva. Me encargué del diseño de componentes visuales en Photoshop e Illustrator y desarrollé el MVP funcional utilizando una plataforma low-code.
                     </p>
                     <div class="project-buttons">
                         <a href="https://www.figma.com/design/so6ZYyeO57197eZEftRj7w/Partybooster?node-id=0-1&t=jwRS9TzJVLOCJRHK-1" target="_blank" class="btn-primary">Ver en Figma</a>
@@ -785,6 +899,30 @@
             </div>
         </div>
     </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Envíame un correo</h3>
+                    <a href="mailto:rafael.palacios.pacheco@gmail.com" class="footer-email">rafael.palacios.pacheco@gmail.com</a>
+                </div>
+                <div class="footer-column">
+                    <h3>Sígueme</h3>
+                    <ul class="footer-socials">
+                        <li><a href="https://www.instagram.com/kameoblinx/" target="_blank">Instagram</a></li>
+                        <li><a href="https://figma.com/@hectorrafaelpal" target="_blank">Figma</a></li>
+                        <li><a href="https://www.linkedin.com/in/héctor-rafael-palacios-pacheco-995036160" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://t.me/rafaelpalaciospacheco" target="_blank">Telegram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Héctor Rafael Palacios Pacheco. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Smooth scroll para los botones
@@ -817,4 +955,5 @@
     </script>
 </body>
 </html>
+
 
